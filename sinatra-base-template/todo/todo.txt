@@ -1,0 +1,4 @@
+apple
+banana
+item3 #undone
+item4 #done
