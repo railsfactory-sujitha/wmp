@@ -1,7 +1,24 @@
+<h4>Table Elements</h4>
+<table border = "1">
 <%@rs4.each do |table|%>
-<%=table%><br/>
+<%@t = table.each_slice(1).to_a%>
+<%n=@t.size%>
+<tr>
+<%for i in 0..n%>
+<td><%=@t[i]%></td>
 <%end%>
-<br/><br/>
+<br/></tr>
+<%end%>
+</table>
+<h4>Table Description</h4>
+<table border = "1">
 <%@rs3.each do |table|%>
-<%=table%><br/>
+<%@t = table.each_slice(1).to_a%>
+<%n=@t.size%>
+<tr>
+<%for i in 0..n%>
+<td><%=@t[i]%></td>
 <%end%>
+<br/></tr>
+<%end%>
+</table>
