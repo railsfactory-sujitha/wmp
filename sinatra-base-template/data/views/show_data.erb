@@ -1,0 +1,4 @@
+<%@rs2.each do |row| %> 
+
+<a href="/show_table?database=<%=params[:database]%>&table=<%=row.first%>"><%=row.first%></a> <br/>
+<%end%>
