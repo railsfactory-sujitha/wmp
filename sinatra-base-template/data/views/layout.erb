@@ -2,10 +2,14 @@
 <head>
 </head>	
 <body>
-	
-	<a href='/'> home </a> &nbsp;<br/><br/>  
-	
-	
-<%=yield %>
+<div id = "container" style = "width:1300px;">	
+<div id ="header" style = "background-color:#FFFF00;">	
+<a href='/'> home </a> &nbsp;<br/><br/>  </div>
+<div id = "content1" style="background-color:#F5DEB3;height:1500px;width:100px;float:right;" align = "right"></div>	
+<div id = "content2" style="background-color:#FAEBD7;height:1500px;width:1100px;float:right;" align = "left">	
+<%=yield %></div>
+<div id = "content3" style="background-color:#FAFAD2;height:1500px;width:100px;float:right;" align = "right"></div>	
+<div id ="footer" style= "background-color:#FFFF00;"></div>
+</div>
 </body>
 </html>

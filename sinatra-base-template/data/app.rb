@@ -84,10 +84,14 @@ end
 post '/create_table' do
 database = params[:database]
 table = params[:table]
+@no = params[:no]
+col = params[:col]
 values = params[:values]
+length = params[:length]
 con7 = Mysql.new('localhost', 'root', '123456789',database)
 con7.query("use #{database}")
-con7.query("create table #{table}(#{values})")
+rd = params[":col :values(:length)"]
+@rs5 = con7.query("create table #{table} (#{rd})")
 
 redirect '/create_table'
 end
@@ -100,7 +104,7 @@ post '/insert_query' do
 database = params[:database]
 table = params[:table]
 values = params[:values]
-attributes = params[:attributes]
+attributes = params[:attributes].to_s
 con8 = Mysql.new('localhost', 'root', '123456789',database)
 con8.query("use #{database}")
 con8.query("insert into #{table}(#{values})values(#{attributes})")
@@ -115,11 +119,12 @@ end
 post '/add_col' do
 database = params[:database]
 table = params[:table]
-values = params[:values]
 col = params[:col]
+value = params[:value]
+length = params[:length]
 con9 = Mysql.new('localhost', 'root', '123456789',database)
 con9.query("use #{database}")
-con9.query("alter table #{table} add column #{col} #{values}")
+con9.query("alter table #{table} add column #{col} #{value}(#{length})")
 
 redirect '/add_col'
 end

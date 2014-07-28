@@ -1,5 +1,5 @@
 <h4>Table Elements</h4>
-<table border = "1" style="#FF4040;">
+<table border = "1" style="color:#FF4040;">
 <%@rs4.each do |table|%>
 <%@t = table.each_slice(1).to_a%>
 <%n=@t.size%>
@@ -7,9 +7,10 @@
 <%for i in 0..n%>
 <td><%=@t[i]%></td>
 <%end%>
-<br/></tr>
+</tr>
 <%end%>
 </table>
+
 <h4>Table Description</h4>
 <table border = "1">
 <%@rs3.each do |table|%>
@@ -19,6 +20,6 @@
 <%for i in 0..n%>
 <td><%=@t[i]%></td>
 <%end%>
-<br/></tr>
+</tr>
 <%end%>
 </table>

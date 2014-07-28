@@ -1,7 +1,26 @@
 <form method="post" action="/create_table">
 Enter the database name:<input type = "text" name = "database"><br/>
-Enter the table name: <input type = "text" name = "table"><br/>
-Enter the fields: <input type ="text" name="values"><br/>
+Enter the new table name: <input type = "text" name = "table"><br/>
+Enter the number of columns:<input type ="number" name="no"><br/>
+<%@no.to_a.first do |n|%>
+<%for i in 0..n%>
+<table>
+<tr>
+<td>
+Enter the column name:  <input type ="text" name = "col"><br/><td/>
+<td>Enter the fields datatypes:
+<select name="values">
+<option value="varchar">varchar</option>
+<option value="char">char</option>
+<option value="int">int</option>
+<option value="text">text</option>
+<option value="date">date</option>
+</select><br/></td>
+<td>Enter the length of the field: <input type ="number" name="length"><br/></td>
+<%end%>
+</tr>
+<%end%>
+</table>
 <input type="submit" name="create table">
 </form>
 <a href="/other_db">see here</a>

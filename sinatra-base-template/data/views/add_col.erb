@@ -1,8 +1,18 @@
 <form method="post" action="/add_col">
 Enter the database name:<input type = "text" name = "database"><br/>
-Enter the table name: <input type = "text" name = "table"><br/>
-Enter the column: <input type ="text" name="col"><br/>
-Enter its value: <input type ="text" name="values"><br/>
+Enter the table name: &nbsp;&nbsp;<input type = "text" name = "table"><br/>
+Enter the column name: <input type ="text" name="col"><br/>
+Enter the fields datatypes:
+<select name="value">
+<option value="varchar">varchar</option>
+<option value="char">char</option>
+<option value="int">int</option>
+<option value="text">text</option>
+<option value="date">date</option>
+</select><br/>
+Enter the length of the field: <input type ="number" name="length"><br/>
+
 <input type="submit" name="add">
 </form>
+<br/><br/>
 <a href="/other_db">see here</a>
