@@ -32,6 +32,8 @@ end
 get '/show_table' do
 database = params[:database]
 table = params[:table]
+insert = params[:insert]
+value = params[:value]
 con3 = Mysql.new('localhost', 'root', '123456789', database) 
 @rs3 = con3.query("describe #{table}")
 @rs4 = con3.query("select * from #{table}")
@@ -77,6 +79,7 @@ con6.query("create database #{database}")
 redirect '/create_database'
 end
 #This is to create table
+#but not working
 get '/create_table' do
 erb :create_table
 end
@@ -95,23 +98,27 @@ rd = params[":col :values(:length)"]
 
 redirect '/create_table'
 end
+
 #This is to insert the values in the table
-get '/insert_query' do
-erb :insert_query
+#Its too not working
+get '/insert_query1' do
+erb :insert_query1
 end
 
-post '/insert_query' do
+post '/insert_query1' do
 database = params[:database]
 table = params[:table]
-values = params[:values]
-attributes = params[:attributes].to_s
+attri = params[:attri]
+insert = params[:insert]
 con8 = Mysql.new('localhost', 'root', '123456789',database)
 con8.query("use #{database}")
-con8.query("insert into #{table}(#{values})values(#{attributes})")
+con8.query("insert into #{table}(#{attri}) values (#{insert});")
 
-redirect '/insert_query'
+redirect '/insert_query1'
 end
+
 #This is to add more columns to table
+#luckily it works 
 get '/add_col' do
 erb :add_col
 end
