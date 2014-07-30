@@ -87,14 +87,15 @@ end
 post '/create_table' do
 database = params[:database]
 table = params[:table]
-@no = params[:no]
-col = params[:col]
-values = params[:values]
-length = params[:length]
+col1 = params[:col1]
+values1 = params[:values1]
+length1 = params[:length1]
+col2 = params[:col2]
+values2 = params[:values2]
+length2 = params[:length2]
 con7 = Mysql.new('localhost', 'root', '123456789',database)
 con7.query("use #{database}")
-rd = params[":col :values(:length)"]
-@rs5 = con7.query("create table #{table} (#{rd})")
+con7.query("create table #{table}(#{col1} #{values1}(#{length1}),#{col2} #{values2}(#{length2}))")
 
 redirect '/create_table'
 end

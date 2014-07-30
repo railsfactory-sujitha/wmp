@@ -1,25 +1,29 @@
 <form method="post" action="/create_table">
 Enter the database name:<input type = "text" name = "database"><br/>
-Enter the new table name: <input type = "text" name = "table"><br/>
-Enter the number of columns:<input type ="number" name="no"><br/>
-<%@no.to_a.first do |n|%>
-<%for i in 0..n%>
-<table>
+Enter the new table name: <input type = "text" name = "table"><br/><br/>
+<table border=2>
 <tr>
-<td>
-Enter the column name:  <input type ="text" name = "col"><br/><td/>
-<td>Enter the fields datatypes:
-<select name="values">
+<td>Enter the column name:  <input type ="text" name = "col1"><br/></td>
+<td>Enter the column name:  <input type ="text" name = "col2"><br/></td></tr>
+<tr><td>Enter the fields datatypes:
+<select name="values1">
 <option value="varchar">varchar</option>
 <option value="char">char</option>
 <option value="int">int</option>
 <option value="text">text</option>
 <option value="date">date</option>
 </select><br/></td>
-<td>Enter the length of the field: <input type ="number" name="length"><br/></td>
-<%end%>
-</tr>
-<%end%>
+<td>Enter the fields datatypes:
+<select name="values2">
+<option value="varchar">varchar</option>
+<option value="char">char</option>
+<option value="int">int</option>
+<option value="text">text</option>
+<option value="date">date</option>
+</select><br/></td></tr>
+<tr><td>Enter the length of the field: <input type ="number" name="length1"><br/></td>
+<td>Enter the length of the field: <input type ="number" name="length2"><br/></td></tr>
+
 </table>
 <input type="submit" name="create table">
 </form>
